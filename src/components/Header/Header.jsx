@@ -1,9 +1,11 @@
+import styles from './Header.module.css';
+
 const Header = () => {
     return (
-        <div className="header">
-            <ul className='menu'>
-                <li><a href="#" className='menu-link'>Главная</a></li>
-                <li><a href="#" className='menu-link'>Любимые герои</a></li>
+        <div className={styles.header}>
+            <ul className={styles.menu}>
+                <li><a href="#" className={styles.menuLink}>Главная</a></li>
+                <li><a href="#" className={styles.menuLink}>Любимые герои</a></li>
             </ul>
         </div>
     )

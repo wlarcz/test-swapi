@@ -6,41 +6,6 @@
   'c';
 }
 
-.header {
-  background: rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  font-size: 17px;
-  grid-area: h;
-}
-
-.menu {
-  display: block;
-  position: relative;
-  height: 50px;
-  margin: 0 auto;
-  padding-left: 10px;
-}
-
-.menu li {
-  display: inline-block;
-  list-style-type: none;
-  margin-left: 2%;
-  height: 50px;
-  line-height: 43px;
-}
-
-.menu-link {
-  color: #f9d71c;
-  vertical-align: middle;
-  text-decoration: none;
-  padding: 0 10px;
-}
-
-a:hover {
-  color: #999;
-  transition: color 0.1s;
-}
-
 .content-wrapper {
   grid-area: c;
 }

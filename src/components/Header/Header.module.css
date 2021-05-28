@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .header {
   background: rgba(0, 0, 0, 0.7);
   overflow: hidden;
@@ -24,8 +20,8 @@
   line-height: 43px;
 }
 
-.menu-link {
-  color: #FFF;
+.menuLink {
+  color: #f9d71c;
   vertical-align: middle;
   text-decoration: none;
   padding: 0 10px;

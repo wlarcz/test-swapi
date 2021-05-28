@@ -1,7 +1,7 @@
 import './App.css';
-import FavoriteCharacters from './components/FavoriteCharacters';
+import FavoriteCharacters from './components/FavoriteCharacters/FavoriteCharacters';
 import Header from './components/Header/Header'
-import MainPage from './components/MainPage';
+import MainPage from './components/MainPage/MainPage';
 
 const App = () => {
   return (
