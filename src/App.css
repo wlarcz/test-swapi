@@ -4,6 +4,8 @@
   grid-template-areas:
   'h'
   'c';
+  grid-template-rows: 50px 1fr;
+  height: 100vh;
 }
 
 .content-wrapper {
