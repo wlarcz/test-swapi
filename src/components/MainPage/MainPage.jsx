@@ -2,6 +2,8 @@ import styles from './MainPage.module.css';
 
 const MainPage = () => {
     return (
+        <div>
+        <h1>Персонажи Звездных Войн</h1>
         <div className={styles.character_list}>
             <div className={styles.character_card}>
                 <div>
@@ -93,6 +95,7 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
