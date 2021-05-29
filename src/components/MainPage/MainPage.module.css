@@ -7,30 +7,3 @@
   grid-gap: 3vw;
   background-color: antiquewhite;
 }
-
-.character_card {
-  /* width: 100%; */
-  /* margin: 0 0 40px; */
-  background-color: gainsboro;
-  border-radius: 1rem;
-  box-shadow: 5px 5px 20px #ccc;
-  overflow: hidden;
-}
-
-.character_card:hover {
-  transform: scale(1.02);
-  transition: all 0.2s;
-}
-
-.character_img {
-  width: 100%;
-}
-
-.character_info {
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 20%;
-  grid-gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}

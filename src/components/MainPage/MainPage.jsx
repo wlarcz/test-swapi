@@ -1,101 +1,25 @@
+import CharacterItem from '../CharacterItem/CharacterItem';
 import styles from './MainPage.module.css';
 
 const MainPage = () => {
+
+    let charactersData = [
+        { 'name': 'luke' },
+        { 'name': 'Darth Vader' },
+        { 'name': 'Leya' },
+        { 'name': 'ObiVan' },
+        { 'name': 'Khan Solo' },
+    ]
+
+    let charactersElements = charactersData
+        .map(card => <CharacterItem name={card.name} />);
+
     return (
         <div>
-        <h1>Персонажи Звездных Войн</h1>
-        <div className={styles.character_list}>
-            <div className={styles.character_card}>
-                <div>
-                    <img className={styles.character_img} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
-                </div>
-                <div className={styles.character_info}>
-                    <div>
-                        <span>Luke Skywalker</span>
-                    </div>
-                    <div>
-                        <button>
-                            ❤
-                        </button>
-                    </div>
-                </div>
+            <h1>Персонажи Звездных Войн</h1>
+            <div className={styles.character_list}>
+                {charactersElements}
             </div>
-            <div className={styles.character_card}>
-                <div>
-                    <img className={styles.character_img} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
-                </div>
-                <div className={styles.character_info}>
-                    <div>
-                        <span>Luke Skywalker</span>
-                    </div>
-                    <div>
-                        <button>
-                            ❤
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.character_card}>
-                <div>
-                    <img className={styles.character_img} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
-                </div>
-                <div className={styles.character_info}>
-                    <div>
-                        <span>Luke Skywalker</span>
-                    </div>
-                    <div>
-                        <button>
-                            ❤
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.character_card}>
-                <div>
-                    <img className={styles.character_img} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
-                </div>
-                <div className={styles.character_info}>
-                    <div>
-                        <span>Luke Skywalker</span>
-                    </div>
-                    <div>
-                        <button>
-                            ❤
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.character_card}>
-                <div>
-                    <img className={styles.character_img} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
-                </div>
-                <div className={styles.character_info}>
-                    <div>
-                        <span>Luke Skywalker</span>
-                    </div>
-                    <div>
-                        <button>
-                            ❤
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.character_card}>
-                <div>
-                    <img className={styles.character_img} src="https://starwars-visualguide.com/assets/img/characters/1.jpg" />
-                </div>
-                <div className={styles.character_info}>
-                    <div>
-                        <span>Luke Skywalker</span>
-                    </div>
-                    <div>
-                        <button>
-                            ❤
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     )
 }
