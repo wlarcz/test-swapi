@@ -11,9 +11,9 @@ const CharacterItem = (props) => {
                     <span>{props.name}</span>
                 </div>
                 <div>
-                    <button>
+                    <button onClick={ () => {alert(props.name)} } >
                         ❤
-                        </button>
+                    </button>
                 </div>
             </div>
         </div>

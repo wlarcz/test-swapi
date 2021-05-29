@@ -4,15 +4,18 @@ import FavoriteCharacters from './components/FavoriteCharacters/FavoriteCharacte
 import Header from './components/Header/Header'
 import MainPage from './components/MainPage/MainPage';
 
-const App = () => {
+const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
         <div className="content-wrapper">
-          {/* <Route path='/main' component={MainPage} /> */}
-          <Route exact path='/' component={MainPage} />
-          <Route exact path='/favorites' component={FavoriteCharacters} />
+          <Route exact path='/'
+            render={() => <MainPage characters={props.appState.characters} />} />
+
+          <Route exact path='/favorites'
+            render={() => <FavoriteCharacters favoriteCharacters={props.appState.favoriteCharacters}/>} />
         </div>
       </div>
     </BrowserRouter>
