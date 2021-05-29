@@ -27,7 +27,13 @@
   padding: 0 10px;
 }
 
+.menu li a.activeLink {
+  color: orange;
+  text-shadow: red 0 0 10px;
+}
+
+
 a:hover {
-  color: #999;
+  color: orange;
   transition: color 0.1s;
 }
