@@ -4,7 +4,7 @@ import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../
 
 const FavoriteCharacters = (props) => {
 
-    let favoriteCharactersElements = props.favoriteCharacters
+    let favoriteCharactersElements = props.favoriteCharacters.favoriteCharacters
         .map(card => <CharacterItem name={card.name} />);
 
         let addToFavorite = () => {

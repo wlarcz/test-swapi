@@ -1,16 +1,29 @@
 const ADD_TO_FAVORITE = 'ADD-TO-FAVORITE';
 const DELETE_FROM_FAVORITE = 'DELETE-FROM-FAVORITE';
 
-const characterReducer = (state, action) => {
+let initialState = {
+    characters: [
+        { 'name': 'luke' },
+        { 'name': 'Darth Vader' },
+        { 'name': 'Leya' },
+        { 'name': 'ObiVan' },
+        { 'name': 'Khan Solo' },
+    ],
+    favoriteCharacters: [
+        { 'name': 'luke' },
+    ]
+}
+
+const characterReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_TO_FAVORITE:
             let newFavoriteCharacter = {
                 'name': 'Luke'
             }
-            state.push(newFavoriteCharacter);
+            state.favoriteCharacters.push(newFavoriteCharacter);
             return state;
         case DELETE_FROM_FAVORITE:
-            state.pop();
+            state.favoriteCharacters.pop();
             return state;
         default:
             return state;

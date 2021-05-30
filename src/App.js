@@ -5,13 +5,14 @@ import Header from './components/Header/Header'
 import MainPage from './components/MainPage/MainPage';
 
 const App = (props) => {
+  debugger;
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
         <div className="content-wrapper">
           <Route exact path='/'
-            render={() => <MainPage characters={props.state.characters} dispatch={props.dispatch}
+            render={() => <MainPage characters={props.state.favoriteCharacters.characters} dispatch={props.dispatch}
             />} />
 
           <Route exact path='/favorites'
