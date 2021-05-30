@@ -1,6 +1,6 @@
 import CharacterItem from '../CharacterItem/CharacterItem';
 import styles from './FavoriteCharacters.module.css';
-import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/state';
+import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/character-reducer';
 
 const FavoriteCharacters = (props) => {
 

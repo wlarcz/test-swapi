@@ -1,4 +1,4 @@
-import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/state';
+import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/character-reducer';
 import CharacterItem from '../CharacterItem/CharacterItem';
 import styles from './MainPage.module.css';
 
