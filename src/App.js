@@ -5,17 +5,19 @@ import Header from './components/Header/Header'
 import MainPage from './components/MainPage/MainPage';
 
 const App = (props) => {
-
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
         <div className="content-wrapper">
           <Route exact path='/'
-            render={() => <MainPage characters={props.appState.characters} />} />
+            render={() => <MainPage characters={props.state.characters} dispatch={props.dispatch}
+            />} />
 
           <Route exact path='/favorites'
-            render={() => <FavoriteCharacters favoriteCharacters={props.appState.favoriteCharacters}/>} />
+            render={() => <FavoriteCharacters
+              dispatch={props.dispatch}
+              favoriteCharacters={props.state.favoriteCharacters} />} />
         </div>
       </div>
     </BrowserRouter>
