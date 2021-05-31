@@ -1,12 +1,17 @@
 const ADD_TO_FAVORITE = 'ADD-TO-FAVORITE';
 const DELETE_FROM_FAVORITE = 'DELETE-FROM-FAVORITE';
 const SET_CHARACTERS = 'SET-CHARACTERS';
+const SET_CURRNET_PAGE = 'SET-CURRNET-PAGE';
+const SET_TOTAL_CHARACTERS_COUNT = 'SET_TOTAL_CHARACTERS_COUNT';
 
 let initialState = {
     characters: [],
     favoriteCharacters: [
         { 'name': 'luke', favorite: true },
-    ]
+    ],
+    pageSize: 10,
+    totalUsersCount: 0,
+    currentPage: 1
 }
 
 const characterReducer = (state = initialState, action) => {
@@ -29,7 +34,11 @@ const characterReducer = (state = initialState, action) => {
             return stateCopy;
         }
         case SET_CHARACTERS:
-            return {...state, characters: [...state.characters, ...action.characters]}
+            return {...state, characters: action.characters}
+        case SET_CURRNET_PAGE:
+            return {...state, currentPage: action.currentPage}
+        case SET_TOTAL_CHARACTERS_COUNT:
+            return {...state, totalUsersCount: action.totalCharactersCount}
         default:
             return state;
     }
@@ -38,6 +47,8 @@ const characterReducer = (state = initialState, action) => {
 export const addToFavoriteActionCreator = () => ({ type: ADD_TO_FAVORITE });
 export const deleteFromFavoriteActionCreator = () => ({ type: DELETE_FROM_FAVORITE });
 export const setCharactersActionCreator = (characters) => ({ type: SET_CHARACTERS, characters });
+export const setCurrentPageActionCreator = (currentPage) => ({ type: SET_CURRNET_PAGE, currentPage });
+export const setTotalCharactersCountActionCreator = (totalCharactersCount) => ({ type: SET_TOTAL_CHARACTERS_COUNT, totalCharactersCount });
 
 
 export default characterReducer;
