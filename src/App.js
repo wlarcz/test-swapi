@@ -7,7 +7,6 @@ import MainPage from './components/MainPage/MainPage';
 import MainPageContainer from './components/MainPage/MainPageContainer';
 
 const App = (props) => {
-  debugger
   return (
     <BrowserRouter>
       <div className="App">

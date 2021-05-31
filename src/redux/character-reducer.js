@@ -3,11 +3,7 @@ const DELETE_FROM_FAVORITE = 'DELETE-FROM-FAVORITE';
 const SET_CHARACTERS = 'SET-CHARACTERS';
 
 let initialState = {
-    characters: [
-        { 'name': 'luke', favorite: true },
-        { 'name': 'vader', favorite: false },
-        { 'name': 'obi-van', favorite: true },
-    ],
+    characters: [],
     favoriteCharacters: [
         { 'name': 'luke', favorite: true },
     ]
@@ -33,6 +29,7 @@ const characterReducer = (state = initialState, action) => {
             return stateCopy;
         }
         case SET_CHARACTERS:
+            debugger
             return {...state, characters: [...state.characters, ...action.characters]}
         default:
             return state;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/character-reducer';
+import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator, setCharactersActionCreator } from '../../redux/character-reducer';
 import CharacterItem from '../CharacterItem/CharacterItem';
 import MainPage from './MainPage';
 
@@ -16,6 +16,9 @@ let mapDispatchToProps = (dispatch) => {
         } ,
         deleteFromFavorite: () => {
             dispatch(deleteFromFavoriteActionCreator())
+        },
+        setCharacters: (characters) => {
+            dispatch(setCharactersActionCreator(characters))
         }
         
     }
