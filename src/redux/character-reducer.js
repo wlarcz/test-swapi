@@ -29,7 +29,6 @@ const characterReducer = (state = initialState, action) => {
             return stateCopy;
         }
         case SET_CHARACTERS:
-            debugger
             return {...state, characters: [...state.characters, ...action.characters]}
         default:
             return state;

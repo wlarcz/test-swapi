@@ -1,45 +1,42 @@
 // import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/character-reducer';
 import axios from 'axios';
-import store from '../../redux/redux-store';
+import React from 'react';
 import CharacterItem from '../CharacterItem/CharacterItem';
 import styles from './MainPage.module.css';
 
-const MainPage = (props) => {
-    let users = [];
+class MainPage extends React.Component {
 
-    if (props.characters.length === 0) {
-        axios.get('https://swapi.dev/api/people/')
-            .then(response => {
-                debugger
-                props.setCharacters(response.data.results);
-            })
+    componentDidMount() {
+        if (this.props.characters.length === 0) {
+            axios.get('https://swapi.dev/api/people/')
+                .then(response => {
+                    this.props.setCharacters(response.data.results);
+                })
+        }  
     }
 
-    let charactersElements = props.characters
-        .map(card => <CharacterItem name={card.name} />);
-
-    let addToFavorite = () => {
-        props.addToFavorite();
+    addToFavorite = () => {
+        this.props.addToFavorite();
     }
 
-    let deleteFromFavorite = () => {
-        props.deleteFromFavorite();
+    deleteFromFavorite = () => {
+        this.props.deleteFromFavorite();
     }
-
-    let setCharacters = () => {
-        props.setCharacters(users);
-    }
-    return (
-        <div>
-            <h1>Персонажи Звездных Войн</h1>
-            <button onClick={() => { addToFavorite() }}>ДОБАВИТЬ ПЕРСА</button>
-            <button onClick={() => { deleteFromFavorite() }}>УДАЛИТЬ ПЕРСА</button>
-            <button onClick={() => { setCharacters() }}>ДОБАВИТЬ</button>
-            <div className={styles.character_list}>
-                {charactersElements}
+    render () {
+        return (
+            <div>
+                <h1>Персонажи Звездных Войн</h1>
+                <button onClick={() => { this.addToFavorite() }}>ДОБАВИТЬ ПЕРСА</button>
+                <button onClick={() => { this.deleteFromFavorite() }}>УДАЛИТЬ ПЕРСА</button>
+                <button onClick={() => { this.getCharacters() }}>ДОБАВИТЬ</button>
+                <div className={styles.character_list}>
+                    {/* {this.charactersElements} */}
+                    {this.props.characters
+        .map(card => <CharacterItem name={card.name} />)}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default MainPage;
