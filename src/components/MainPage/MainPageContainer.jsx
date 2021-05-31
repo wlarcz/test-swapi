@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator, setCharactersActionCreator, setCurrentPageActionCreator, setTotalCharactersCountActionCreator } from '../../redux/character-reducer';
-import CharacterItem from '../CharacterItem/CharacterItem';
-import MainPage from './MainPage';
+import MainPageAPIComponent from './MainPageAPIComponent';
 
 let mapStateToProps = (state) => {
+
     return {
         characters: state.favoriteCharacters.characters,
         pageSize: state.favoriteCharacters.pageSize,
-        totalUsersCount: state.favoriteCharacters.totalUsersCount,
+        totalCharactersCount: state.favoriteCharacters.totalCharactersCount,
         currentPage: state.favoriteCharacters.currentPage
     }
 }
@@ -29,10 +29,9 @@ let mapDispatchToProps = (dispatch) => {
         setTotalCharactersCount: (totalCharactersCount) => {
             dispatch(setTotalCharactersCountActionCreator(totalCharactersCount))
         }
-        
     }
 }
 
-const MainPageContainer = connect(mapStateToProps, mapDispatchToProps) (MainPage);
+const MainPageContainer = connect(mapStateToProps, mapDispatchToProps) (MainPageAPIComponent);
 
 export default MainPageContainer;

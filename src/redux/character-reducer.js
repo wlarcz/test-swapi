@@ -10,7 +10,7 @@ let initialState = {
         { 'name': 'luke', favorite: true },
     ],
     pageSize: 10,
-    totalUsersCount: 0,
+    totalCharactersCount: 0,
     currentPage: 1
 }
 
@@ -38,7 +38,7 @@ const characterReducer = (state = initialState, action) => {
         case SET_CURRNET_PAGE:
             return {...state, currentPage: action.currentPage}
         case SET_TOTAL_CHARACTERS_COUNT:
-            return {...state, totalUsersCount: action.totalCharactersCount}
+            return {...state, totalCharactersCount: action.totalCharactersCount}
         default:
             return state;
     }
