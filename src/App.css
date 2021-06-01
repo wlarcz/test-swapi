@@ -6,6 +6,7 @@
   'c';
   grid-template-rows: 50px 1fr;
   height: 100vh;
+  background-color: antiquewhite;
 }
 
 .content-wrapper {

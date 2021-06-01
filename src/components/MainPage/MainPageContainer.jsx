@@ -8,7 +8,8 @@ let mapStateToProps = (state) => {
         characters: state.favoriteCharacters.characters,
         pageSize: state.favoriteCharacters.pageSize,
         totalCharactersCount: state.favoriteCharacters.totalCharactersCount,
-        currentPage: state.favoriteCharacters.currentPage
+        currentPage: state.favoriteCharacters.currentPage,
+        isFavorite: state.favoriteCharacters.isFavorite
     }
 }
 

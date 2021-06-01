@@ -7,7 +7,7 @@ const SET_TOTAL_CHARACTERS_COUNT = 'SET_TOTAL_CHARACTERS_COUNT';
 let initialState = {
     characters: [],
     favoriteCharacters: [
-        { 'name': 'luke', favorite: true },
+        // { 'name': 'luke', favorite: true },
     ],
     pageSize: 10,
     totalCharactersCount: 0,
@@ -17,24 +17,13 @@ let initialState = {
 const characterReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_FAVORITE: {
-            // let newFavoriteCharacter = {
-            //     'name': 'Luke'
-            // }
-            // let stateCopy = { ...state };
-            // stateCopy.favoriteCharacters = [...state.favoriteCharacters];
-            // stateCopy.favoriteCharacters.push(character);
-            // // stateCopy.favoriteCharacters.push(newFavoriteCharacter);
-            // // state.favoriteCharacters.push(newFavoriteCharacter);
-            // return stateCopy;
             debugger
-            // return {...state, favoriteCharacters: [{name: action.character}]}
-            return {...state, favoriteCharacters: [...state.favoriteCharacters, {name: action.character, imgUrl: action.imgUrl}]}
+            return {...state, favoriteCharacters: [...state.favoriteCharacters, {name: action.character, imgUrl: action.imgUrl, isFavorite: true}]}
         }
         case DELETE_FROM_FAVORITE: {
             let stateCopy = { ...state };
             stateCopy.favoriteCharacters = [...state.favoriteCharacters]
             stateCopy.favoriteCharacters.pop();
-            // state.favoriteCharacters.pop();
             return stateCopy;
         }
         case SET_CHARACTERS:
@@ -48,7 +37,7 @@ const characterReducer = (state = initialState, action) => {
     }
 }
 
-export const addToFavoriteActionCreator = (character, imgUrl) => ({ type: ADD_TO_FAVORITE, character, imgUrl });
+export const addToFavoriteActionCreator = (character, imgUrl, isFavorite) => ({ type: ADD_TO_FAVORITE, character, imgUrl, isFavorite });
 export const deleteFromFavoriteActionCreator = () => ({ type: DELETE_FROM_FAVORITE });
 export const setCharactersActionCreator = (characters) => ({ type: SET_CHARACTERS, characters });
 export const setCurrentPageActionCreator = (currentPage) => ({ type: SET_CURRNET_PAGE, currentPage });

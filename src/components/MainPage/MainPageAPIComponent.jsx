@@ -24,7 +24,8 @@ class MainPageAPIComponent extends React.Component {
                         let charactersInPage = newResponse.data.results.length
                         for (let i = 0; i < charactersInPage; i++) {
                             let imgUrl = getUrlCharacter(i);
-                            newResponse.data.results[i].imgUrl = imgUrl
+                            newResponse.data.results[i].imgUrl = imgUrl;
+                            newResponse.data.results[i].isFavorite = false;
                         }
                         return newResponse;
                 
@@ -56,6 +57,7 @@ class MainPageAPIComponent extends React.Component {
                     for (let i = 0; i < charactersInPage; i++) {
                         let imgUrl = getUrlCharacter(i);
                         newResponse.data.results[i].imgUrl = imgUrl
+                        newResponse.data.results[i].isFavorite = false;
                     }
                     return newResponse;
             
