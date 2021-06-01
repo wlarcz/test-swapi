@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/test-swapi/static/css/main.241e0fe9.chunk.css",
+    "main.js": "/test-swapi/static/js/main.9cc285c9.chunk.js",
+    "main.js.map": "/test-swapi/static/js/main.9cc285c9.chunk.js.map",
+    "runtime-main.js": "/test-swapi/static/js/runtime-main.1959ee61.js",
+    "runtime-main.js.map": "/test-swapi/static/js/runtime-main.1959ee61.js.map",
+    "static/js/2.f982b7af.chunk.js": "/test-swapi/static/js/2.f982b7af.chunk.js",
+    "static/js/2.f982b7af.chunk.js.map": "/test-swapi/static/js/2.f982b7af.chunk.js.map",
+    "static/js/3.c1e235ca.chunk.js": "/test-swapi/static/js/3.c1e235ca.chunk.js",
+    "static/js/3.c1e235ca.chunk.js.map": "/test-swapi/static/js/3.c1e235ca.chunk.js.map",
+    "index.html": "/test-swapi/index.html",
+    "static/css/main.241e0fe9.chunk.css.map": "/test-swapi/static/css/main.241e0fe9.chunk.css.map",
+    "static/js/2.f982b7af.chunk.js.LICENSE.txt": "/test-swapi/static/js/2.f982b7af.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1959ee61.js",
+    "static/js/2.f982b7af.chunk.js",
+    "static/css/main.241e0fe9.chunk.css",
+    "static/js/main.9cc285c9.chunk.js"
+  ]
+}
