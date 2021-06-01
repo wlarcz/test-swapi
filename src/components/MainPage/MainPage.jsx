@@ -2,7 +2,7 @@ import styles from './MainPage.module.css';
 import CharacterItem from '../CharacterItem/CharacterItem';
 
 const MainPage = (props) => {
-    
+
     let addToFavorite = () => {
         props.addToFavorite();
     }
@@ -16,6 +16,7 @@ const MainPage = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
+
     return <div>
 
         <h1>Персонажи Звездных Войн</h1>
@@ -35,8 +36,7 @@ const MainPage = (props) => {
 
         <div className={styles.character_list}>
             {/* {this.charactersElements} */}
-            {   props.characters
-                .map(card => <CharacterItem name={card.name} />)}
+            {   props.characters.map(card => <CharacterItem name={card.name} imgUrl={card.imgUrl} addToFavorite={props.addToFavorite}/>)}
         </div>
 
     </div>

@@ -5,11 +5,32 @@ import MainPage from './MainPage';
 
 class MainPageAPIComponent extends React.Component {
 
+    
     componentDidMount() {
         if (this.props.characters.length === 0) {
             axios.get(`https://swapi.dev/api/people/?page=${this.props.currentPage}&count=${this.props.pageSize}`)
                 .then(response => {
-                    this.props.setCharacters(response.data.results);
+                    let getUrlCharacter = (i) => {
+                        let str = response.data.results[i].url;
+                        let re = 'http://swapi.dev/api/people/';
+                        let midStr = str.slice(0, -1);
+                        let lastStr = midStr.replace(re, 'https://starwars-visualguide.com/assets/img/characters/');
+                        let newStr = `${lastStr}.jpg`;
+                        return newStr;
+                    }
+                
+                    let newResponse = () => {
+                        let newResponse = { ...response }
+                        let charactersInPage = newResponse.data.results.length
+                        for (let i = 0; i < charactersInPage; i++) {
+                            let imgUrl = getUrlCharacter(i);
+                            newResponse.data.results[i].imgUrl = imgUrl
+                        }
+                        return newResponse;
+                
+                    }
+                    let modResponse = newResponse();
+                    this.props.setCharacters(modResponse.data.results);
                     this.props.setTotalCharactersCount(response.data.count);
                 })
         }
@@ -20,23 +41,43 @@ class MainPageAPIComponent extends React.Component {
         // axios.get(`https://swapi.dev/api/people/?page=${this.props.pageNumber}&count=${this.props.pageSize}`)
         axios.get(`https://swapi.dev/api/people/?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
-                this.props.setCharacters(response.data.results);
+                let getUrlCharacter = (i) => {
+                    let str = response.data.results[i].url;
+                    let re = 'http://swapi.dev/api/people/';
+                    let midStr = str.slice(0, -1);
+                    let lastStr = midStr.replace(re, 'https://starwars-visualguide.com/assets/img/characters/');
+                    let newStr = `${lastStr}.jpg`;
+                    return newStr;
+                }
+            
+                let newResponse = () => {
+                    let newResponse = { ...response }
+                    let charactersInPage = newResponse.data.results.length
+                    for (let i = 0; i < charactersInPage; i++) {
+                        let imgUrl = getUrlCharacter(i);
+                        newResponse.data.results[i].imgUrl = imgUrl
+                    }
+                    return newResponse;
+            
+                }
+                let modResponse = newResponse();
+                this.props.setCharacters(modResponse.data.results);
+                // this.props.setCharacters(response.data.results);
             })
     }
-    
+
     render() {
-        console.log(this.props.totalCharactersCount)
         return (
             <MainPage
-             onPageChanged={ this.onPageChanged }
-             getCharacters={this.props.getCharacters}
-             characters={this.props.characters}
-             currentPage={this.props.currentPage}
-             totalCharactersCount={this.props.totalCharactersCount}
-             pageSize={this.props.pageSize}
-             addToFavorite={this.props.addToFavorite}
-             deleteFromFavorite={this.props.deleteFromFavorite}
-             />
+                onPageChanged={this.onPageChanged}
+                getCharacters={this.props.getCharacters}
+                characters={this.props.characters}
+                currentPage={this.props.currentPage}
+                totalCharactersCount={this.props.totalCharactersCount}
+                pageSize={this.props.pageSize}
+                addToFavorite={this.props.addToFavorite}
+                deleteFromFavorite={this.props.deleteFromFavorite}
+            />
         )
     }
 }

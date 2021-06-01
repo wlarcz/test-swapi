@@ -14,8 +14,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addToFavorite: () => {
-            dispatch(addToFavoriteActionCreator())
+        addToFavorite: (name, imgUrl) => {
+            dispatch(addToFavoriteActionCreator(name, imgUrl))
         } ,
         deleteFromFavorite: () => {
             dispatch(deleteFromFavoriteActionCreator())

@@ -3,8 +3,9 @@ import styles from './FavoriteCharacters.module.css';
 import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator } from '../../redux/character-reducer';
 
 const FavoriteCharacters = (props) => {
+    debugger
     let favoriteCharactersElements = props.favoriteCharacters
-        .map(card => <CharacterItem name={card.name} />);
+        .map(card => <CharacterItem name={card.name} imgUrl={card.imgUrl}/>);
 
     let addToFavorite = () => {
         props.addToFavorite();

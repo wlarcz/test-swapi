@@ -15,36 +15,40 @@ let initialState = {
 }
 
 const characterReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case ADD_TO_FAVORITE: {
-                let newFavoriteCharacter = {
-                'name': 'Luke'
-            }
-            let stateCopy = {...state};
-            stateCopy.favoriteCharacters = [...state.favoriteCharacters];
-            stateCopy.favoriteCharacters.push(newFavoriteCharacter);
-            // state.favoriteCharacters.push(newFavoriteCharacter);
-            return stateCopy;
+            // let newFavoriteCharacter = {
+            //     'name': 'Luke'
+            // }
+            // let stateCopy = { ...state };
+            // stateCopy.favoriteCharacters = [...state.favoriteCharacters];
+            // stateCopy.favoriteCharacters.push(character);
+            // // stateCopy.favoriteCharacters.push(newFavoriteCharacter);
+            // // state.favoriteCharacters.push(newFavoriteCharacter);
+            // return stateCopy;
+            debugger
+            // return {...state, favoriteCharacters: [{name: action.character}]}
+            return {...state, favoriteCharacters: [...state.favoriteCharacters, {name: action.character, imgUrl: action.imgUrl}]}
         }
-        case DELETE_FROM_FAVORITE:{
-            let stateCopy = {...state};
+        case DELETE_FROM_FAVORITE: {
+            let stateCopy = { ...state };
             stateCopy.favoriteCharacters = [...state.favoriteCharacters]
             stateCopy.favoriteCharacters.pop();
             // state.favoriteCharacters.pop();
             return stateCopy;
         }
         case SET_CHARACTERS:
-            return {...state, characters: action.characters}
+            return { ...state, characters: action.characters }
         case SET_CURRNET_PAGE:
-            return {...state, currentPage: action.currentPage}
+            return { ...state, currentPage: action.currentPage }
         case SET_TOTAL_CHARACTERS_COUNT:
-            return {...state, totalCharactersCount: action.totalCharactersCount}
+            return { ...state, totalCharactersCount: action.totalCharactersCount }
         default:
             return state;
     }
 }
 
-export const addToFavoriteActionCreator = () => ({ type: ADD_TO_FAVORITE });
+export const addToFavoriteActionCreator = (character, imgUrl) => ({ type: ADD_TO_FAVORITE, character, imgUrl });
 export const deleteFromFavoriteActionCreator = () => ({ type: DELETE_FROM_FAVORITE });
 export const setCharactersActionCreator = (characters) => ({ type: SET_CHARACTERS, characters });
 export const setCurrentPageActionCreator = (currentPage) => ({ type: SET_CURRNET_PAGE, currentPage });
