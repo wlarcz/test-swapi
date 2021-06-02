@@ -6,7 +6,7 @@ import MainPageContainer from './components/MainPage/MainPageContainer';
 
 const App = (props) => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL} >
       <div className="App">
         <Header />
         <div className="content-wrapper">
