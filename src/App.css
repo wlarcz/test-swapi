@@ -12,3 +12,7 @@
 .content-wrapper {
   grid-area: c;
 }
+
+body {
+  background-color: antiquewhite;
+}

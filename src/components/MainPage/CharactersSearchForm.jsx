@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from 'formik';
+import styles from './CharactersSearchForm.module.css';
 
 const сharactersSearchFormValidate = values => {
     const errors = {};
@@ -13,18 +14,18 @@ const CharactersSearchForm = (props) => {
     debugger
   }
 
-  return <div>
+  return <div className={styles.inputForm}>
 
-    <Formik
+    <Formik 
       initialValues={{ term: '' }}
       validate={сharactersSearchFormValidate}
       onSubmit={submit}
     >
       {({ isSubmitting }) => (
         <Form>
-          <Field type="next" name="term" />
+          <Field type="text" name="term" placeholder='Найти персонажа'/>
           <button type="submit" disabled={isSubmitting}>
-            Найти персонажа
+            Поиск
            </button>
         </Form>
       )}
