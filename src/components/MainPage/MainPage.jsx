@@ -1,5 +1,6 @@
 import styles from './MainPage.module.css';
 import CharacterItem from '../CharacterItem/CharacterItem';
+import CharactersSearchForm from './CharactersSearchForm';
 
 const MainPage = (props) => {
 
@@ -12,7 +13,7 @@ const MainPage = (props) => {
     return <div>
 
         <h1>Персонажи Звездных Войн</h1>
-
+        <CharactersSearchForm onFilterChanged={props.onFilterChanged} />
         <div className={styles.pagination}>
             {pages.map(p => {
                 return <a className={props.currentPage === p && styles.active}

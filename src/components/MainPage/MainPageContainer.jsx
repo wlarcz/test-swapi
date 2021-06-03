@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator, setCharactersActionCreator, setCurrentPageActionCreator, setTotalCharactersCountActionCreator } from '../../redux/character-reducer';
+import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator, setCharactersActionCreator, setCurrentPageActionCreator, setTotalCharactersCountActionCreator, setFilterActionCreator } from '../../redux/character-reducer';
 import MainPageAPIComponent from './MainPageAPIComponent';
 
 let mapStateToProps = (state) => {
-
     return {
         characters: state.favoriteCharacters.characters,
         pageSize: state.favoriteCharacters.pageSize,
         totalCharactersCount: state.favoriteCharacters.totalCharactersCount,
         currentPage: state.favoriteCharacters.currentPage,
-        isFavorite: state.favoriteCharacters.isFavorite
+        isFavorite: state.favoriteCharacters.isFavorite,
+        term: state.favoriteCharacters.filter.term
     }
 }
 
@@ -29,6 +29,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setTotalCharactersCount: (totalCharactersCount) => {
             dispatch(setTotalCharactersCountActionCreator(totalCharactersCount))
+        },
+        setFilter: (filter) => {
+            dispatch(setFilterActionCreator(filter))
         }
     }
 }
