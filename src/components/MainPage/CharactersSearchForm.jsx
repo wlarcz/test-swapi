@@ -11,7 +11,6 @@ const CharactersSearchForm = (props) => {
   const submit = (values, { setSubmitting }) => {
     props.onFilterChanged(values);
     setSubmitting(false);
-    debugger
   }
 
   return <div className={styles.inputForm}>

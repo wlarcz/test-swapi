@@ -37,7 +37,6 @@ class MainPageAPIComponent extends React.Component {
     }
 
     onPageChanged = (pageNumber) => {
-        debugger
         this.props.setCurrentPage(pageNumber);
         axios.get(`https://swapi.dev/api/people/?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {

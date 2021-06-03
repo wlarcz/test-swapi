@@ -1,7 +1,7 @@
-import styles from './CharacterItem.module.css'
+import styles from './CharacterItem.module.css';
 
 const CharacterItem = (props) => {
-    debugger
+    
     return (
         <div className={styles.character_card}>
             <div>
@@ -11,12 +11,13 @@ const CharacterItem = (props) => {
                 <div>
                     <span>{props.name}</span>
                 </div>
-                <div>
+                <div className={styles.favButton}>
                     {props.isFavorite ?
-                        <button onClick={() => { props.deleteFromFavorite() }}>
-                            Х
-                    </button> :
-                    <button onClick={() => { props.addToFavorite(props.name, props.imgUrl, props.isFavorite) }}>
+                    //     <button onClick={() => { props.deleteFromFavorite() }}>
+                    //         Х
+                    // </button> 
+                    <div></div>:
+                    <button type='submit'onClick={() => {props.addToFavorite(props.name, props.imgUrl, props.isFavorite)}}>
                             ❤
                     </button>
 

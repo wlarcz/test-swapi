@@ -24,3 +24,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.favButton button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #A8A8A8;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.favButton button:hover {
+  transform: scale(1.02);
+  transition: all 0.2s;
+  background: #5C5C5C; ;
+}

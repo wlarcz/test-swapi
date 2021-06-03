@@ -26,7 +26,8 @@ const characterReducer = (state = initialState, action) => {
         case DELETE_FROM_FAVORITE: {
             let stateCopy = { ...state };
             stateCopy.favoriteCharacters = [...state.favoriteCharacters]
-            stateCopy.favoriteCharacters.pop();
+            // stateCopy.favoriteCharacters.pop();
+            stateCopy.favoriteCharacters = [];
             return stateCopy;
         }
         case SET_CHARACTERS:
