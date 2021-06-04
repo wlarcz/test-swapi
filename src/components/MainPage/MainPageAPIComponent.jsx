@@ -67,7 +67,7 @@ class MainPageAPIComponent extends React.Component {
 
     onFilterChanged = (filter) => {
         this.props.setFilter(filter);
-        axios.get(`https://swapi.dev/api/people/?search=${this.props.term}&page=${this.props.currentPage}&count=${this.props.pageSize}`)
+        axios.get(`https://swapi.dev/api/people/?search=${this.props.term}`)
             .then(response => {
                 let getUrlCharacter = (i) => {
                     let str = response.data.results[i].url;
