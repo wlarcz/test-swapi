@@ -17,7 +17,6 @@ let mapDispatchToProps = (dispatch) => {
         deleteFromFavorite: () => {
             dispatch(deleteFromFavoriteActionCreator())
         }
-        
     }
 }
 

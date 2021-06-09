@@ -28,9 +28,11 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
+
 .inputForm button:hover {
     background: #B3A89A;
 }
+
 .inputForm button:before {
   font-size: 16px;
   color: #F9F0DA;

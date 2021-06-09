@@ -9,7 +9,10 @@ const FavoriteCharacters = (props) => {
         <div>
             <h1>Мои любимые персы</h1>
             <div className={styles.buttonContainer}>
-                <button onClick={() => { props.deleteFromFavorite() }}>
+                <button onClick={() => {
+                    props.deleteFromFavorite();
+                    localStorage.clear();
+                    debugger }}>
                     Удалить всех
                 </button>
             </div>

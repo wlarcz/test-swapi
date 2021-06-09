@@ -1,6 +1,7 @@
 const ADD_TO_FAVORITE = 'ADD-TO-FAVORITE';
 const DELETE_FROM_FAVORITE = 'DELETE-FROM-FAVORITE';
 const SET_CHARACTERS = 'SET-CHARACTERS';
+const SET_FAVORITE_CHARACTERS = 'SET-FAVORITE-CHARACTERS';
 const SET_CURRNET_PAGE = 'SET-CURRNET-PAGE';
 const SET_TOTAL_CHARACTERS_COUNT = 'SET_TOTAL_CHARACTERS_COUNT';
 const SET_FILTER = 'SET-FILTER';
@@ -32,6 +33,8 @@ const characterReducer = (state = initialState, action) => {
         }
         case SET_CHARACTERS:
             return { ...state, characters: action.characters, term: action.term }
+        case SET_FAVORITE_CHARACTERS:
+            return { ...state, favoriteCharacters: action.favoriteCharacters, term: action.term }
         case SET_CURRNET_PAGE:
             return { ...state, currentPage: action.currentPage }
         case SET_TOTAL_CHARACTERS_COUNT:
@@ -47,6 +50,7 @@ const characterReducer = (state = initialState, action) => {
 export const addToFavoriteActionCreator = (character, imgUrl, isFavorite) => ({ type: ADD_TO_FAVORITE, character, imgUrl, isFavorite });
 export const deleteFromFavoriteActionCreator = () => ({ type: DELETE_FROM_FAVORITE });
 export const setCharactersActionCreator = (characters) => ({ type: SET_CHARACTERS, characters });
+export const setFavoriteCharactersActionCreator = (favoriteCharacters) => ({ type: SET_FAVORITE_CHARACTERS, favoriteCharacters });
 export const setCurrentPageActionCreator = (currentPage) => ({ type: SET_CURRNET_PAGE, currentPage });
 export const setFilterActionCreator = (filter) => ({ type: SET_FILTER, filter });
 export const setTotalCharactersCountActionCreator = (totalCharactersCount) => ({ type: SET_TOTAL_CHARACTERS_COUNT, totalCharactersCount });
