@@ -1,16 +1,28 @@
 import CharacterItem from '../CharacterItem/CharacterItem';
 import styles from './FavoriteCharacters.module.css';
+import React from 'react';
 
-const FavoriteCharacters = (props) => {
-    let favoriteCharactersElements = props.favoriteCharacters
-        .map(card => <CharacterItem name={card.name} imgUrl={card.imgUrl} isFavorite={card.isFavorite} deleteFromFavorite={props.deleteFromFavorite} />);
+class FavoriteCharacters extends React.Component {
+    componentDidMount() {
+        let localStorageFef = localStorage.getItem('favorite character');
+        let localStorageFefOBJ = JSON.parse(localStorageFef);
+        if (localStorageFefOBJ) {
+            this.props = { ...this.props, favoriteCharacters: localStorageFefOBJ };
+            this.props.setFavCharacters(localStorageFefOBJ);
+        }
+    }
 
-    return (
-        <div>
+    render() {
+
+        let favoriteCharactersElements = this.props.favoriteCharacters
+        .map(card => <CharacterItem name={card.name} imgUrl={card.imgUrl} isFavorite={card.isFavorite} deleteFromFavorite={this.props.deleteFromFavorite} />);
+
+        return (
+            <div>
             <h1>Мои любимые персы</h1>
             <div className={styles.buttonContainer}>
                 <button onClick={() => {
-                    props.deleteFromFavorite();
+                    this.props.deleteFromFavorite();
                     localStorage.clear();
                     debugger }}>
                     Удалить всех
@@ -21,7 +33,7 @@ const FavoriteCharacters = (props) => {
                 {favoriteCharactersElements}
             </div>
         </div>
-    )
+        )
+    }
 }
-
 export default FavoriteCharacters;
