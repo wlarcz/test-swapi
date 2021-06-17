@@ -51,7 +51,9 @@ class MainPageAPIComponent extends React.Component {
         let localStorageFefOBJ = JSON.parse(localStorageFef);
         // if (localStorageFefOBJ.length > 0) {
         if (localStorageFefOBJ) {
-            this.props = {...this.props,  favoriteCharacters: localStorageFefOBJ};
+            // this.props = {...this.props,  favoriteCharacters: localStorageFefOBJ};
+            const newState = {...this.props,  favoriteCharacters: localStorageFefOBJ};
+            return newState;
         }
     }
 

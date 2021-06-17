@@ -1,4 +1,3 @@
-import CharacterItem from '../CharacterItem/CharacterItem';
 import { addToFavoriteActionCreator, deleteFromFavoriteActionCreator, setFavoriteCharactersActionCreator } from '../../redux/character-reducer';
 import { connect } from 'react-redux';
 import FavoriteCharacters from './FavoriteCharacters';

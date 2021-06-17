@@ -16,14 +16,15 @@ const MainPage = (props) => {
         <CharactersSearchForm onFilterChanged={props.onFilterChanged} />
         <div className={styles.pagination}>
             {pages.map(p => {
-                return <a className={props.currentPage === p && styles.active}
-                    onClick={() => { props.onPageChanged(p) }}>{p}</a>
+                // return <button className={props.currentPage === p && styles.active}
+                return <button key={ p } className={props.currentPage === p ? styles.active : ''}
+                    onClick={() => { props.onPageChanged(p) }}>{p}</button>
             })}
         </div>
 
         <div className={styles.character_list}>
             {/* {this.charactersElements} */}
-            {   props.characters.map(card => <CharacterItem name={card.name} imgUrl={card.imgUrl} addToFavorite={props.addToFavorite}
+            {   props.characters.map(card => <CharacterItem key = { card.name } name={card.name} imgUrl={card.imgUrl} addToFavorite={props.addToFavorite}
             isFavorite={props.isFavorite}/>)}
         </div>
 

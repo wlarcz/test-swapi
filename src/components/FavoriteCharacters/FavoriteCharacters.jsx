@@ -7,15 +7,15 @@ class FavoriteCharacters extends React.Component {
         let localStorageFef = localStorage.getItem('favorite character');
         let localStorageFefOBJ = JSON.parse(localStorageFef);
         if (localStorageFefOBJ) {
-            this.props = { ...this.props, favoriteCharacters: localStorageFefOBJ };
-            this.props.setFavCharacters(localStorageFefOBJ);
+            const newState = { ...this.props, favoriteCharacters: localStorageFefOBJ };
+            newState.setFavCharacters(localStorageFefOBJ);
         }
     }
 
     render() {
 
         let favoriteCharactersElements = this.props.favoriteCharacters
-        .map(card => <CharacterItem name={card.name} imgUrl={card.imgUrl} isFavorite={card.isFavorite} deleteFromFavorite={this.props.deleteFromFavorite} />);
+        .map(card => <CharacterItem key = { card.name } name={card.name} imgUrl={card.imgUrl} isFavorite={card.isFavorite} deleteFromFavorite={this.props.deleteFromFavorite} />);
 
         return (
             <div>

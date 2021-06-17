@@ -5,7 +5,7 @@ const CharacterItem = (props) => {
     return (
         <div className={styles.character_card}>
             <div>
-                <img className={styles.character_img} src={props.imgUrl} />
+                <img className={styles.character_img} src={props.imgUrl} alt='character'/>
             </div>
             <div className={styles.character_info}>
                 <div>
